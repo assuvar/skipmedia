@@ -11,14 +11,12 @@ const WhatsAppFloat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    eventType: '',
-    eventDate: '',
+    serviceType: '', // Renamed from eventType
+    date: '', // Renamed from eventDate
     location: '',
     contact: '',
     message: ''
   });
-
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
@@ -30,12 +28,12 @@ const WhatsAppFloat = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const whatsappMessage = `Hi MahaCaptures, I'm interested in booking a photography session.
+    const whatsappMessage = `Hi Skip Media Hub, I'm interested in your video editing services.
 
 📝 Details:
 • Name: ${formData.name}
-• Event Type: ${formData.eventType}
-• Event Date: ${formData.eventDate}
+• Service Type: ${formData.serviceType}
+• Preferred Date: ${formData.date}
 • Location: ${formData.location}
 • Contact: ${formData.contact}
 
@@ -44,13 +42,13 @@ const WhatsAppFloat = () => {
 Please share more details and package options. Thank you!`;
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    window.open(`https://wa.me/+919876543210?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/6382958407?text=${encodedMessage}`, '_blank');
 
     // Reset form and close modal
     setFormData({
       name: '',
-      eventType: '',
-      eventDate: '',
+      serviceType: '',
+      date: '',
       location: '',
       contact: '',
       message: ''
@@ -59,33 +57,18 @@ Please share more details and package options. Thank you!`;
   };
 
   const quickWhatsApp = () => {
-    const message = encodeURIComponent("Hi MahaCaptures, I'm interested in your photography services. Please share more details.");
-    window.open(`https://wa.me/+919585966522?text=${message}`, '_blank');
+    const message = encodeURIComponent("Hi Skip Media Hub, I'm interested in your video editing services. Please share more details.");
+    window.open(`https://wa.me/6382958407?text=${message}`, '_blank');
   };
 
   const handleBookNow = () => {
-    // Play the 20-second audio
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play();
-
-      setTimeout(() => {
-        if (audioRef.current) {
-          audioRef.current.pause();
-          audioRef.current.currentTime = 0;
-        }
-      }, 20000); // Stop after 20 seconds
-    }
-
+    // Audio removed as per request
     // Open the booking modal
     setIsOpen(true);
   };
 
   return (
     <>
-      {/* Hidden audio element */}
-      <audio ref={audioRef} src="/src/assets/bgm.mp3" preload="auto" />
-
       {/* Floating WhatsApp Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <div className="flex flex-col items-end space-y-3">
@@ -116,9 +99,9 @@ Please share more details and package options. Thank you!`;
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="max-w-md bg-black border-gray-800">
           <VisuallyHidden>
-            <DialogTitle>Book Photography Session via WhatsApp</DialogTitle>
+            <DialogTitle>Book Video Editing Service via WhatsApp</DialogTitle>
             <DialogDescription>
-              Fill out the form below to send your booking details directly to MahaCaptures via WhatsApp
+              Fill out the form below to send your details directly to Skip Media Hub via WhatsApp
             </DialogDescription>
           </VisuallyHidden>
 
@@ -129,7 +112,7 @@ Please share more details and package options. Thank you!`;
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-white">Book via WhatsApp</h3>
-                <p className="text-white/70 text-sm">Fill details for quick booking</p>
+                <p className="text-white/70 text-sm">Fill details for quick inquiry</p>
               </div>
             </div>
             <button
@@ -153,29 +136,29 @@ Please share more details and package options. Thank you!`;
             </div>
 
             <div>
-              <label className="block text-white/80 text-sm mb-2">Event Type *</label>
-              <Select onValueChange={(value) => handleInputChange('eventType', value)} required>
+              <label className="block text-white/80 text-sm mb-2">Service Type *</label>
+              <Select onValueChange={(value) => handleInputChange('serviceType', value)} required>
                 <SelectTrigger className="bg-gray-900 border-gray-700 text-white focus:border-primary focus:ring-primary">
-                  <SelectValue placeholder="Select event type" />
+                  <SelectValue placeholder="Select service" />
                 </SelectTrigger>
                 <SelectContent className="bg-gray-900 border-gray-700">
-                  <SelectItem value="wedding">Wedding</SelectItem>
-                  <SelectItem value="engagement">Engagement</SelectItem>
-                  <SelectItem value="birthday">Birthday</SelectItem>
-                  <SelectItem value="corporate">Corporate Event</SelectItem>
-                  <SelectItem value="fashion">Fashion Shoot</SelectItem>
-                  <SelectItem value="product">Product Photography</SelectItem>
+                  <SelectItem value="video-editing">Video Editing Service</SelectItem>
+                  <SelectItem value="reels-shorts">Reels / Shorts</SelectItem>
+                  <SelectItem value="motion-graphics">Motion Graphics</SelectItem>
+                  <SelectItem value="full-production">Full Video Production</SelectItem>
+                  <SelectItem value="content-writing">Content Writing</SelectItem>
+                  <SelectItem value="brand-strategy">Brand Strategy</SelectItem>
                   <SelectItem value="other">Other</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div>
-              <label className="block text-white/80 text-sm mb-2">Event Date</label>
+              <label className="block text-white/80 text-sm mb-2">Preferred Date</label>
               <Input
                 type="date"
-                value={formData.eventDate}
-                onChange={(e) => handleInputChange('eventDate', e.target.value)}
+                value={formData.date}
+                onChange={(e) => handleInputChange('date', e.target.value)}
                 className="bg-gray-900 border-gray-700 text-white focus:border-primary focus:ring-primary"
               />
             </div>
@@ -189,6 +172,7 @@ Please share more details and package options. Thank you!`;
                 <SelectContent className="bg-gray-900 border-gray-700">
                   <SelectItem value="vellore">Vellore</SelectItem>
                   <SelectItem value="bangalore">Bangalore</SelectItem>
+                  <SelectItem value="remote">Remote / Online</SelectItem>
                   <SelectItem value="other">Other Location</SelectItem>
                 </SelectContent>
               </Select>

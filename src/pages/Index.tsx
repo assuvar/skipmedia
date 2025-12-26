@@ -11,6 +11,7 @@ import EnhancedTestimonials from '@/components/EnhancedTestimonials';
 import EnhancedUpcomingEvents from '@/components/EnhancedUpcomingEvents';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import Footer from '@/components/Footer';
+import ClientLogos from '@/components/ClientLogos';
 
 const Index = () => {
   const [isWhatsAppModalOpen, setIsWhatsAppModalOpen] = useState(false);
@@ -30,34 +31,35 @@ const Index = () => {
 
   const handlePackageBooking = (packageTitle: string, price: string) => {
     const message = encodeURIComponent(
-      `Hi Skip Media, I'm interested in the ${packageTitle} package (${price}). Please share more details and availability.`
+      `Hi Skip Media Hub, I'm interested in the ${packageTitle} package (${price}). Please share more details and availability.`
     );
-   window.open(`https://wa.me/+919585966522?text=${message}`, '_blank');
+    window.open(`https://wa.me/6382958407?text=${message}`, '_blank');
   };
 
   const handleEventBooking = (eventDate: string, location: string) => {
     const message = encodeURIComponent(
-      `Hi Skip Media, I'm interested in booking a session on ${eventDate} in ${location}. Please share availability and packages.`
+      `Hi Skip Media Hub, I'm interested in booking a session on ${eventDate} in ${location}. Please share availability and packages.`
     );
-   window.open(`https://wa.me/+919585966522?text=${message}`, '_blank');
+    window.open(`https://wa.me/6382958407?text=${message}`, '_blank');
   };
 
   const handleGalleryBooking = () => {
     const message = encodeURIComponent(
-      "Hi Skip Media, I'm interested in booking a similar photography session. Please share more details and packages."
+      "Hi Skip Media Hub, I'm interested in your video editing services. Please share more details and packages."
     );
-   window.open(`https://wa.me/+919585966522?text=${message}`, '_blank');
+    window.open(`https://wa.me/6382958407?text=${message}`, '_blank');
   };
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navbar onBookNowClick={openWhatsAppModal} />
-      <EnhancedHero onBookNowClick={openWhatsAppModal} />
+      <Navbar />
+      <EnhancedHero />
       <About />
-      <EnhancedGallery onBookNowClick={handleGalleryBooking} />
-      <EnhancedPackages onBookNowClick={handlePackageBooking} />
+      <EnhancedGallery />
+      <ClientLogos />
+      <EnhancedPackages />
       <EnhancedTestimonials />
-      <EnhancedUpcomingEvents onBookNowClick={handleEventBooking} />
+      <EnhancedUpcomingEvents />
       <Footer />
       <WhatsAppFloat />
     </div>

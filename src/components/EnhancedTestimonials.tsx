@@ -10,39 +10,52 @@ const EnhancedTestimonials = () => {
 
   const testimonials = [
     {
-      name: "Santhosh S (Shakthi)",
-      event: "Wedding",
+      name: "Arun Kumar",
+      event: "Wedding Highlights",
       rating: 5,
-      text: "Exceptional team! The coordination was amazing! We were delighted with the outcome of the album and videos. Special thanks to Mr. Vishnu for patiently guiding us and being accommodative. Very happy to have chosen Maha Captures!",
-
+      text: "Excellent video editing skills with spot-on delivery timing. The service is truly top-notch! Skip Media Hub captured the essence of our wedding perfectly.",
     },
     {
-      name: "Jagannathan R",
-      event: "Puberty Function",
+      name: "Jessica Lee",
+      event: "YouTube Content",
       rating: 5,
-      text: "Studio Maha Captures has the best team of photographers. They were so friendly and polite. Special thanks to Mr. Vishnu for those candid shots. I will definitely recommend to my friends and family!",
-
+      text: "They just get it. My retention rates skyrocketed after I started using Skip Media Hub for my vlogs. The pacing is snappy and keeps people watching.",
     },
     {
-      name: "Preetha Ravichandran",
-      event: "Birthday Party",
+      name: "Priya & Rahul",
+      event: "Save the Date",
       rating: 5,
-      text: "Vishnu & team clicked a few candid shots of my son. I'm so impressed! The pictures are absolutely beautiful—every smile and little moment was captured so perfectly. Thank you for these precious memories!",
-
+      text: "Great edits, timely delivery, and fantastic service. Highly recommended! The transitions and color grading were exactly what we imagined.",
     },
     {
-      name: "Sivasankari Selvaraj",
-      event: "Family Wedding",
+      name: "NextGen Startups",
+      event: "Brand Commercial",
       rating: 5,
-      text: "Exceptional pictures! We had an opportunity to take some unique pictures of my baby boy. They came out as life-long memories, which I call signature moments. Thank you Maha Captures!",
-
+      text: "We needed a high-energy promo for our product launch. The team delivered a video that looked like a million bucks. Super smooth workflow.",
     },
     {
-      name: "MDhivya 016",
-      event: "Wedding",
+      name: "Vikram Singh",
+      event: "Corporate Reel",
       rating: 5,
-      text: "Extremely happy with the stunning pictures! Every shot is beautifully framed and full of life. These candid pics are very special to me. Thank you so much Maha Captures team!",
-
+      text: "They have an incredible ability to transform even basic footage into creative and engaging videos. I absolutely love their working style and the quality of service provided!",
+    },
+    {
+      name: "Sarah Jenkins",
+      event: "Travel Vlog",
+      rating: 5,
+      text: "Skip Media Hub turned my raw travel clips into a cinematic masterpiece. The sound design and pacing were incredible. Will definitely work with them again!",
+    },
+    {
+      name: "Tech Solutions Inc.",
+      event: "Product Promo",
+      rating: 5,
+      text: "Professional, fast, and creative. They understood our brand vision immediately and delivered a promo video that significantly boosted our engagement.",
+    },
+    {
+      name: "Creative Minds Co.",
+      event: "Social Media Reels",
+      rating: 5,
+      text: "The best decision for our agency. They churn out high-quality reels that follow the latest trends. Our client reach has doubled!",
     }
   ];
 
@@ -114,21 +127,21 @@ const EnhancedTestimonials = () => {
                   key={index}
                   className="min-w-full bg-gradient-to-br from-gray-900/50 to-black border-gray-800 glow-hover"
                 >
-                  <CardContent className="p-12 lg:p-16">
+                  <CardContent className="p-8 lg:p-16"> {/* Reduced padding for mobile */}
                     <div className="max-w-4xl mx-auto text-center">
                       {/* Rating */}
                       <div className="flex justify-center mb-8">
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Star
                             key={i}
-                            className="w-8 h-8 text-yellow-400 fill-current mr-1 animate-pulse"
+                            className="w-6 h-6 md:w-8 md:h-8 text-yellow-400 fill-current mr-1 animate-pulse"
                             style={{ animationDelay: `${i * 100}ms` }}
                           />
                         ))}
                       </div>
 
                       {/* Quote */}
-                      <blockquote className="text md:text-2xl font-light text-white/90 mb-10 leading-relaxed ">
+                      <blockquote className="text-lg md:text-2xl font-light text-white/90 mb-10 leading-relaxed ">
                         "{testimonial.text}"
                       </blockquote>
 
@@ -136,15 +149,15 @@ const EnhancedTestimonials = () => {
                       <div className="flex items-center justify-center">
                         <div className="relative">
                           <img
-
+                            src={`https://api.dicebear.com/7.x/initials/svg?seed=${testimonial.name}`}
                             alt={testimonial.name}
-                            className="w-20 h-20 rounded-full object-cover mr-6 ring-4 ring-primary/20"
+                            className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover mr-4 md:mr-6 ring-4 ring-primary/20"
                           />
                           <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-transparent"></div>
                         </div>
                         <div className="text-left">
-                          <div className="text-2xl font-semibold text-white">{testimonial.name}</div>
-                          <div className="text-primary text-lg font-medium">{testimonial.event}</div>
+                          <div className="text-lg md:text-2xl font-semibold text-white">{testimonial.name}</div>
+                          <div className="text-primary text-sm md:text-lg font-medium">{testimonial.event}</div>
                         </div>
                       </div>
                     </div>
@@ -175,8 +188,8 @@ const EnhancedTestimonials = () => {
                 key={index}
                 onClick={() => goToTestimonial(index)}
                 className={`w-4 h-4 rounded-full transition-all duration-300 ${index === currentIndex
-                    ? 'bg-primary scale-125'
-                    : 'bg-white/30 hover:bg-white/50 hover:scale-110'
+                  ? 'bg-primary scale-125'
+                  : 'bg-white/30 hover:bg-white/50 hover:scale-110'
                   }`}
               />
             ))}

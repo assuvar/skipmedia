@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import bgm from '/src/assets/bgm.mp3';
+import logo from '/src/assets/SKIP logo.svg';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +31,6 @@ const Navbar = () => {
     { label: 'Our Work', href: '#gallery' },
     { label: 'Packages', href: '#packages' },
     { label: 'Testimonials', href: '#testimonials' },
-    { label: 'Upcoming Events', href: '#events' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -42,17 +42,17 @@ const Navbar = () => {
   };
 
   const handleBookNowClick = () => {
-    // Play music
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play().catch((err) => {
-        console.warn('Autoplay failed:', err);
-      });
-    }
+    // Play music removed as per request
+    // if (audioRef.current) {
+    //   audioRef.current.currentTime = 0;
+    //   audioRef.current.play().catch((err) => {
+    //     console.warn('Autoplay failed:', err);
+    //   });
+    // }
 
     // Open WhatsApp
-    const phoneNumber = '919585966522';
-    const message = encodeURIComponent('Hi! I would like to book a session with Maha Captures.');
+    const phoneNumber = '6382958407';
+    const message = encodeURIComponent('Hi! I would like to book a session with Skip Media Hub.');
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -60,15 +60,16 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-black/80 backdrop-blur-xl border-b border-white/10'
-          : 'bg-transparent'
+        ? 'bg-black/80 backdrop-blur-xl border-b border-white/10'
+        : 'bg-transparent'
         }`}
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <div className="flex-shrink-0 flex items-center space-x-2">
+          <div className="flex-shrink-0 flex items-center space-x-3">
+            <img src={logo} alt="Skip Media Hub" className="h-10 w-auto" />
             <span className="text-2xl font-bold font-inter tracking-tight">
-              Skip <span className="text-primary">Media</span>
+              Skip <span className="text-primary">Media Hub</span>
             </span>
           </div>
 

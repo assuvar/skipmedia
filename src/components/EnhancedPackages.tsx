@@ -9,63 +9,46 @@ const EnhancedPackages = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // ✅ Correct path - make sure the file is in public/src/assets
-    audioRef.current = new Audio(bgm);
-    audioRef.current.load();
+    // Audio removed
   }, []);
 
   const handleBookNowClick = (packageTitle: string, price: string) => {
-    // 🔊 Play the audio if loaded
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play().catch((err) => {
-        console.warn('Audio failed to play:', err);
-      });
-    }
+    // Audio removed as per request
 
     const message = encodeURIComponent(
-      `Hi MahaCaptures, I'm interested in the ${packageTitle} package priced at ${price}. Please share more details.`
+      `Hi Skip Media Hub, I'm interested in the ${packageTitle} package priced at ${price}. Please share more details.`
     );
-    window.open(`https://wa.me/919585966522?text=${message}`, '_blank');
+    window.open(`https://wa.me/6382958407?text=${message}`, '_blank');
   };
 
   const packages = [
     {
       title: "Standard",
-      price: "₹79,999",
+      price: "₹150-₹300 (+Content ₹400)",
       features: [
-        "Traditional photographer x 4",
-        "Traditional videographer x 2",
-        "Candid photographer x 1",
-        "Dronography x 1",
-        "64 GB pendrive",
-        "Reels - 1 video",
-        "Premium album - 2 (30 sheets)",
-        "Traditional video - 1hr x 2",
-        "12x18 Frame - 1"
+        "Simple cuts",
+        "Basic captions",
+        "Stock images / screenshots",
+        "No heavy motion",
+        "Effort Level: LOW",
+        "VFX Level: NO",
+        "Best for: Basic deliverables (Quantity over Quality)"
       ],
       icon: Camera,
       popular: false,
       gradient: "from-gray-600/20 to-gray-800/20"
     },
     {
-      title: "Premium",
-      price: "₹1,79,999",
+      title: "Premiere",
+      price: "₹400-₹600 (+Content ₹500)",
       features: [
-        "Traditional photographer x 6",
-        "Traditional videographer x 4",
-        "Candid photographer x 2",
-        "Candid videographer x 1",
-        "Dronography x 1",
-        "LED wall x 2",
-        "Pre-wed photography & videography",
-        "128 GB pendrive",
-        "Reels - 2 videos",
-        "Song - 1",
-        "Premium album - 4 (30 sheets)",
-        "Traditional video - 2hr x 2",
-        "20x30 Frame - 1",
-        "12x18 Frame - 2"
+        "Transitions",
+        "Light motion graphics",
+        "Basic title animation",
+        "B-roll alignment",
+        "Effort Level: MEDIUM",
+        "VFX Level: MEDIUM",
+        "Best for: Flashy content on mid-budget"
       ],
       icon: Sparkles,
       popular: true,
@@ -73,22 +56,16 @@ const EnhancedPackages = () => {
     },
     {
       title: "Elite",
-      price: "₹2,99,999",
+      price: "₹1000-1500 (+ Content)",
       features: [
-        "Traditional photographer x 6",
-        "Traditional videographer x 6",
-        "Candid photographer x 2",
-        "Candid videographer x 1",
-        "Dronography x 3",
-        "LED wall x 2",
-        "Pre-wed photography & videography",
-        "128 GB pendrive",
-        "Reels - 4 videos",
-        "Song - 2",
-        "Premium album - 6 (30 sheets)",
-        "Traditional video - 2hr x 2",
-        "20x30 Frame - 4",
-        "12x18 Frame - 4"
+        "Full motion graphics",
+        "Advanced text animations",
+        "3D assets & Custom sound design",
+        "Full creative ownership",
+        "Custom workflow & Revisions included",
+        "Strategy, packaging, branding integration",
+        "Effort Level: HIGH",
+        "Best for: Premium Quality & Skill"
       ],
       icon: Palette,
       popular: false,
@@ -150,8 +127,8 @@ const EnhancedPackages = () => {
 
                   <Button
                     className={`w-full py-4 rounded-full transition-all duration-300 hover:scale-105 ${pkg.popular
-                        ? 'bg-primary hover:bg-primary/90 text-white hover:shadow-lg hover:shadow-primary/25'
-                        : 'bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-primary/50'
+                      ? 'bg-primary hover:bg-primary/90 text-white hover:shadow-lg hover:shadow-primary/25'
+                      : 'bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-primary/50'
                       }`}
                     onClick={() => handleBookNowClick(pkg.title, pkg.price)}
                   >
@@ -177,9 +154,9 @@ const EnhancedPackages = () => {
               }
 
               const message = encodeURIComponent(
-                "Hi MahaCaptures, I need a custom photography package. Can we discuss my requirements?"
+                "Hi Skip Media Hub, I need a custom video editing package. Can we discuss my requirements?"
               );
-              window.open(`https://wa.me/+919585966522?text=${message}`, '_blank');
+              window.open(`https://wa.me/6382958407?text=${message}`, '_blank');
             }}
           >
             <Users className="w-5 h-5 mr-2" />
