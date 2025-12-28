@@ -3,6 +3,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Check, Camera, Clock, Users, Palette, Sparkles } from 'lucide-react';
 import bgm from '/src/assets/bgm.mp3';
+import standardIcon from '/src/assets/packages/standard-icon.png';
+import premiereIcon from '/src/assets/packages/premiere-icon.png';
+import eliteIcon from '/src/assets/packages/elite-icon.png';
 
 
 const EnhancedPackages = () => {
@@ -24,7 +27,7 @@ const EnhancedPackages = () => {
   const packages = [
     {
       title: "Standard",
-      price: "₹150-₹300 (+Content ₹400)",
+      price: "₹150-₹300",
       features: [
         "Simple cuts",
         "Basic captions",
@@ -34,13 +37,13 @@ const EnhancedPackages = () => {
         "VFX Level: NO",
         "Best for: Basic deliverables (Quantity over Quality)"
       ],
-      icon: Camera,
+      image: standardIcon,
       popular: false,
       gradient: "from-gray-600/20 to-gray-800/20"
     },
     {
       title: "Premiere",
-      price: "₹400-₹600 (+Content ₹500)",
+      price: "₹400-₹600",
       features: [
         "Transitions",
         "Light motion graphics",
@@ -50,13 +53,13 @@ const EnhancedPackages = () => {
         "VFX Level: MEDIUM",
         "Best for: Flashy content on mid-budget"
       ],
-      icon: Sparkles,
+      image: premiereIcon,
       popular: true,
       gradient: "from-primary/20 to-blue-600/20"
     },
     {
       title: "Elite",
-      price: "₹1000-1500 (+ Content)",
+      price: "₹1000-1500",
       features: [
         "Full motion graphics",
         "Advanced text animations",
@@ -67,7 +70,7 @@ const EnhancedPackages = () => {
         "Effort Level: HIGH",
         "Best for: Premium Quality & Skill"
       ],
-      icon: Palette,
+      image: eliteIcon,
       popular: false,
       gradient: "from-purple-600/20 to-pink-600/20"
     }
@@ -87,7 +90,7 @@ const EnhancedPackages = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {packages.map((pkg, index) => {
-            const Icon = pkg.icon;
+
             return (
               <Card
                 key={pkg.title}
@@ -104,8 +107,8 @@ const EnhancedPackages = () => {
 
                 <CardContent className="p-8 h-full flex flex-col">
                   <div className="text-center mb-8">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-                      <Icon className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    <div className="inline-flex items-center justify-center w-24 h-24 bg-primary/10 rounded-full mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+                      <img src={pkg.image} alt={pkg.title} className="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <h3 className="text-3xl font-semibold text-white mb-3 group-hover:text-gradient transition-all duration-300">
                       {pkg.title}

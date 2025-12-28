@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Scissors, MousePointer2, Type, Music, Play, SkipForward, SkipBack, Settings, Search, Monitor, Volume2, Layers } from 'lucide-react';
 import bgm from '/src/assets/bgm.mp3';
-import logo from '/src/assets/SKIP logo.svg';
+
 
 const EnhancedHero = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -191,9 +191,7 @@ const EnhancedHero = () => {
         </div>
 
         {/* Main Title - Skip Media */}
-        <div className="mb-4">
-          <img src={logo} alt="Skip Media Logo" className="h-24 md:h-32 lg:h-40 w-auto mx-auto" />
-        </div>
+
         <h1 className="text-5xl md:text-9xl lg:text-[10rem] font-bold tracking-tighter mb-10 drop-shadow-2xl text-center leading-none">
           <span className="glow-text-blue inline-block hover:scale-105 transition-transform duration-300 cursor-default">S</span>
           <span className="text-white inline-block">kip </span>
