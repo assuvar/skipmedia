@@ -19,12 +19,13 @@ const Footer = () => {
               />
               <div>
                 <h3 className="text-2xl font-bold text-white">Skip Media Hub</h3>
-                <p className="text-white/70">Unify Brand to Dream Audience</p>
+                <p className="text-white/70">Crafting Visual Perfection</p>
               </div>
             </div>
             <p className="text-white/70 mb-6 max-w-md">
-              Creating timeless memories through the art of videography. Based in Vellore and Bangalore,
-              we specialize in capturing life's most precious moments with unparalleled elegance and style.
+              We specialize in professional video editing, transforming raw content into polished visuals. Based in Sivagangai, 
+              We partner with Creators and Influencers to produce high-quality, engaging videos that deliver powerful social messages. 
+              Let’s turn your vision into impactful content.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/skip_media_hub?igsh=aXcxZTAzZGd5dTFz" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-primary/20 p-3 rounded-full transition-colors duration-300">
@@ -61,8 +62,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 text-primary mr-3" />
-                <a href="https://wa.me/6382958407" className="text-white/70 hover:text-primary transition-colors duration-300">
-                  +91 6382958407
+                <a href="https://wa.me/9787175693" className="text-white/70 hover:text-primary transition-colors duration-300">
+                  +91 9787175693
                 </a>
               </div>
               <div className="flex items-center">

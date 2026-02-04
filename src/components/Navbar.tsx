@@ -51,7 +51,7 @@ const Navbar = () => {
     // }
 
     // Open WhatsApp
-    const phoneNumber = '6382958407';
+    const phoneNumber = '9787175693';
     const message = encodeURIComponent('Hi! I would like to book a session with Skip Media Hub.');
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');

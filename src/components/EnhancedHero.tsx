@@ -25,7 +25,7 @@ const EnhancedHero = () => {
     const message = encodeURIComponent(
       "Hi Skip Media Hub, I'm interested in working with you."
     );
-    window.open(`https://wa.me/6382958407?text=${message}`, '_blank');
+    window.open(`https://wa.me/9787175693?text=${message}`, '_blank');
   };
 
   // Animation variants
