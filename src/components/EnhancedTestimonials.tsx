@@ -9,54 +9,7 @@ const EnhancedTestimonials = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const testimonials = [
-    {
-      name: "Arun Kumar",
-      event: "Wedding Highlights",
-      rating: 5,
-      text: "Excellent video editing skills with spot-on delivery timing. The service is truly top-notch! Skip Media Hub captured the essence of our wedding perfectly.",
-    },
-    {
-      name: "Jessica Lee",
-      event: "YouTube Content",
-      rating: 5,
-      text: "They just get it. My retention rates skyrocketed after I started using Skip Media Hub for my vlogs. The pacing is snappy and keeps people watching.",
-    },
-    {
-      name: "Priya & Rahul",
-      event: "Save the Date",
-      rating: 5,
-      text: "Great edits, timely delivery, and fantastic service. Highly recommended! The transitions and color grading were exactly what we imagined.",
-    },
-    {
-      name: "NextGen Startups",
-      event: "Brand Commercial",
-      rating: 5,
-      text: "We needed a high-energy promo for our product launch. The team delivered a video that looked like a million bucks. Super smooth workflow.",
-    },
-    {
-      name: "Vikram Singh",
-      event: "Corporate Reel",
-      rating: 5,
-      text: "They have an incredible ability to transform even basic footage into creative and engaging videos. I absolutely love their working style and the quality of service provided!",
-    },
-    {
-      name: "Sarah Jenkins",
-      event: "Travel Vlog",
-      rating: 5,
-      text: "Skip Media Hub turned my raw travel clips into a cinematic masterpiece. The sound design and pacing were incredible. Will definitely work with them again!",
-    },
-    {
-      name: "Tech Solutions Inc.",
-      event: "Product Promo",
-      rating: 5,
-      text: "Professional, fast, and creative. They understood our brand vision immediately and delivered a promo video that significantly boosted our engagement.",
-    },
-    {
-      name: "Creative Minds Co.",
-      event: "Social Media Reels",
-      rating: 5,
-      text: "The best decision for our agency. They churn out high-quality reels that follow the latest trends. Our client reach has doubled!",
-    }
+    
   ];
 
 

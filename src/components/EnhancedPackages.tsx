@@ -21,7 +21,7 @@ const EnhancedPackages = () => {
     const message = encodeURIComponent(
       `Hi Skip Media Hub, I'm interested in the ${packageTitle} package priced at ${price}. Please share more details.`
     );
-    window.open(`https://wa.me/6382958407?text=${message}`, '_blank');
+    window.open(`https://wa.me/9787175693?text=${message}`, '_blank');
   };
 
   const packages = [
@@ -159,7 +159,7 @@ const EnhancedPackages = () => {
               const message = encodeURIComponent(
                 "Hi Skip Media Hub, I need a custom video editing package. Can we discuss my requirements?"
               );
-              window.open(`https://wa.me/6382958407?text=${message}`, '_blank');
+              window.open(`https://wa.me/9787175693?text=${message}`, '_blank');
             }}
           >
             <Users className="w-5 h-5 mr-2" />

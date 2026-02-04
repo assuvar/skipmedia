@@ -42,7 +42,7 @@ const WhatsAppFloat = () => {
 Please share more details and package options. Thank you!`;
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    window.open(`https://wa.me/6382958407?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/9787175693?text=${encodedMessage}`, '_blank');
 
     // Reset form and close modal
     setFormData({
@@ -58,7 +58,7 @@ Please share more details and package options. Thank you!`;
 
   const quickWhatsApp = () => {
     const message = encodeURIComponent("Hi Skip Media Hub, I'm interested in your video editing services. Please share more details.");
-    window.open(`https://wa.me/6382958407?text=${message}`, '_blank');
+    window.open(`https://wa.me/9787175693?text=${message}`, '_blank');
   };
 
   const handleBookNow = () => {
